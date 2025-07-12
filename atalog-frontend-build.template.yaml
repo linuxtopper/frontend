@@ -46,7 +46,6 @@ objects:
               value: ${BACKEND_SERVICE_URL}
       triggers:
         - type: ConfigChange
-        - type: GitHub
 parameters:
   - name: NAME
     description: Application name
