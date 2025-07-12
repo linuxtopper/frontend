@@ -5,32 +5,6 @@ metadata:
   labels:
     app: catalog-ui
     group: catalog
-parameters:
-  - name: NAME
-    description: Application name
-    value: catalog-ui
-  - name: SOURCE_REPOSITORY_URL
-    description: Git repo URL
-    required: true
-  - name: SOURCE_REPOSITORY_REF
-    description: Git branch
-    value: main
-  - name: GIT_USERNAME
-    description: Git username
-    required: true
-  - name: GIT_PASSWORD
-    description: Git password
-    required: true
-  - name: NPM_REGISTRY
-    description: NPM corporate registry
-    required: true
-  - name: BACKEND_SERVICE_URL
-    description: Backend service URL
-    required: true
-  - name: REGISTRY_URL
-    description: Container images registry URL
-    required: true
-
 objects:
   - apiVersion: image.openshift.io/v1
     kind: ImageStream
@@ -73,3 +47,29 @@ objects:
       triggers:
         - type: ConfigChange
         - type: GitHub
+parameters:
+  - name: NAME
+    description: Application name
+    value: catalog-ui
+  - name: SOURCE_REPOSITORY_URL
+    description: Git repo URL
+    required: true
+  - name: SOURCE_REPOSITORY_REF
+    description: Git branch
+    value: main
+  - name: GIT_USERNAME
+    description: Git username
+    required: true
+  - name: GIT_PASSWORD
+    description: Git password
+    required: true
+  - name: NPM_REGISTRY
+    description: NPM corporate registry
+    required: true
+  - name: BACKEND_SERVICE_URL
+    description: Backend service URL
+    required: true
+  - name: REGISTRY_URL
+    description: Container images registry URL
+    required: true
+
